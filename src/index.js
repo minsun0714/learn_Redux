@@ -16,11 +16,12 @@ const countModifier = (count = 0, action) => {
 
 const countStore = legacy_createStore(countModifier);
 
-countStore.dispatch({ type: "ADD" });
-countStore.dispatch({ type: "ADD" });
-countStore.dispatch({ type: "ADD" });
-countStore.dispatch({ type: "ADD" });
-countStore.dispatch({ type: "ADD" });
-countStore.dispatch({ type: "MINUS" });
+const handleAdd = () => {
+  countStore.dispatch({ type: "ADD" });
+};
+const handleMinus = () => {
+  countStore.dispatch({ type: "MINUS" });
+};
 
-console.log(countStore.getState());
+add.addEventListener("click", handleAdd);
+minus.addEventListener("click", handleMinus);
