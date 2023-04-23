@@ -12,6 +12,7 @@ function Home({ toDos, addToDo }) {
   };
   const onSubmit = (e) => {
     e.preventDefault();
+    if (text === "") return;
     addToDo(text);
     setText("");
   };
