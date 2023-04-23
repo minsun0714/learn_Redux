@@ -1,5 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
+import { actionCreators } from "../store";
 
 const DeleteBtn = styled.button`
   background-color: whitesmoke;
@@ -12,11 +14,17 @@ const DeleteBtn = styled.button`
   }
 `;
 
-function ToDo({ text }) {
+function ToDo({ text, onBtnClick }) {
   return (
     <li>
-      {text} <DeleteBtn>DEL</DeleteBtn>
+      {text} <DeleteBtn onClick={onBtnClick}>DEL</DeleteBtn>
     </li>
   );
 }
-export default ToDo;
+function mapDispatchToProps(dispatch, ownProps) {
+  return {
+    onBtnClick: () => dispatch(actionCreators.deleteToDo(ownProps.id)),
+  };
+}
+
+export default connect(null, mapDispatchToProps)(ToDo);
