@@ -28,7 +28,7 @@ const reducer = (state = [], action) => {
       return [{ text: action.payload, id: Date.now() }, ...state];
     case deleteToDo.type:
       // case DELETE:
-      return state.filter((toDo) => toDo.id !== action.id);
+      return state.filter((toDo) => toDo.id !== action.payload);
     default:
       return state;
   }
