@@ -6,6 +6,10 @@ const DeleteBtn = styled.button`
   border: transparent;
   border-radius: 5px;
   box-shadow: 1px 1px 5px gray;
+  cursor: pointer;
+  &:hover {
+    background: tomato;
+  }
 `;
 
 function ToDo({ text }) {
