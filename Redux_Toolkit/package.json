@@ -26,6 +26,9 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "plugins": [
+      "jest"
     ]
   },
   "browserslist": {
@@ -41,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "babel-loader": "^9.1.2",
     "semver": "^7.5.0"
   }
 }
