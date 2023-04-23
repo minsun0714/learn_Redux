@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import { actionCreators } from "../store";
+import { Link } from "react-router-dom";
 
 const DeleteBtn = styled.button`
   background-color: whitesmoke;
@@ -14,10 +15,11 @@ const DeleteBtn = styled.button`
   }
 `;
 
-function ToDo({ text, onBtnClick }) {
+function ToDo({ text, onBtnClick, id }) {
   return (
     <li>
-      {text} <DeleteBtn onClick={onBtnClick}>DEL</DeleteBtn>
+      <Link to={`/${id}`}>{text}</Link>
+      <DeleteBtn onClick={onBtnClick}>DEL</DeleteBtn>
     </li>
   );
 }
